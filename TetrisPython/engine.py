@@ -14,12 +14,26 @@ class Display:
         GPIO.output(2, 0)
         GPIO.output(2, 1)
 
+        # self.__command(0b00100001) # LCD Extended Commands. You can use 0x21
+        # self.__command(0b10110000) # Set LCD Vop (Contrast). You can use 0xB0
+        # self.__command(0b00000100) # Set Temp coefficent. You can use 0x04
+        # self.__command(0b00010100) # LCD bias mode 1:48. You can use 0x14
+        # self.__command(0b00100000) # LCD Basic Commands. You can use 0x20
+        # self.__command(0b00001100) # LCD in normal mode. You can use 0x0C
+
+        self.__command(0b00100001) # Signalisiert dem Display, dass erweiterte LCD-Befehle kommen.
+        self.__command(0b10110000)
+        self.__command(0b00000100)
+        self.__command(0b00010100)
+        self.__command(0b00100000)
+        self.__command(0b00001100)
+
     def __send(self, command, data):
         # Befehl oder Daten?
         GPIO.output(4, command)
         GPIO.output(3, 0)
 
-        # Sendet ein Byte bitweise und sendet jedes Mal einen Impuls an den Clock-Pin. Auch bekannt als "shiftOut()".
+        # Sendet ein Byte bitweise und sendet jedes Mal einen Impuls an den Clock-Pin. (Theoretisch hätte man auch die SPI-Pins dafür verwenden können, aber: "Never change a running system")
         i = 7
         while (i >= 0):
             GPIO.output(17, data & (1 << i))
@@ -49,19 +63,8 @@ class Display:
 
         self.set_cursor(0, 0)
 
-    def draw(self, x, y, data):
-        self.__command(0x21)
-        self.__command(0xB0)
-        self.__command(0x04)
-        self.__command(0x14)
-        self.__command(0x20)
-        self.__command(0x0C)
-        # self.__command(0b00100001) # LCD Extended Commands. You can use 0x21
-        # self.__command(0b10110000) # Set LCD Vop (Contrast). You can use 0xB0
-        # self.__command(0b00000100) # Set Temp coefficent. You can use 0x04
-        # self.__command(0b00010100) # LCD bias mode 1:48. You can use 0x14
-        # self.__command(0b00100000) # LCD Basic Commands. You can use 0x20
-        # self.__command(0b00001100) # LCD in normal mode. You can use 0x0C
+    def draw(self, data):
+        self.set_cursor(10, 10);
         self.__data(0b01111111)
         self.__data(0b01001001)
         self.__data(0b01001001)
