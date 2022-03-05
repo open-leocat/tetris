@@ -6,6 +6,7 @@ GPIO.setmode(GPIO.BCM)
 display = engine.Display()
 
 display.clear()
-display.draw(0b11111111)
+display.set_cursor(40, 1)
+display.draw(0b00111100)
 
 GPIO.cleanup()
