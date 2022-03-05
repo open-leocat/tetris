@@ -64,7 +64,7 @@ class Display:
         self.set_cursor(0, 0)
 
     def draw(self, data):
-        self.set_cursor(10, 10);
+        self.set_cursor(10, 20);
         self.__data(0b01111111)
         self.__data(0b01001001)
         self.__data(0b01001001)
