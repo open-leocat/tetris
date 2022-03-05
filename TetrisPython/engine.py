@@ -56,6 +56,7 @@ class Display:
         self.__command(0x40 | y)
 
     def clear(self):
+        # Ich bin mir unsicher ob das überhaupt funktioniert
         self.set_cursor(0, 0)
 
         for i in range(4032):
@@ -64,13 +65,13 @@ class Display:
         self.set_cursor(0, 0)
 
     def draw(self, data):
-        self.set_cursor(10, 20);
-        self.__data(0b01111111)
-        self.__data(0b01001001)
-        self.__data(0b01001001)
-        self.__data(0b01001001)
-        self.__data(0b01001001)
-        self.__data(0b00000000)
+        self.__data(data)
+        # self.__data(0b01111111)
+        # self.__data(0b01001001)
+        # self.__data(0b01001001)
+        # self.__data(0b01001001)
+        # self.__data(0b01001001)
+        # self.__data(0b00000000)
 
         pass
 
