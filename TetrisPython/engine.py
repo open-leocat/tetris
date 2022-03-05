@@ -31,22 +31,22 @@ class Display:
         pass
 
     def draw(self, x, y, data):
-        __command(0, 0b00100001 ); # LCD Extended Commands. You can use 0x21
-        __command(0, 0b10110000 ); # Set LCD Vop (Contrast). You can use 0xB0
-        __command(0, 0b00000100 ); # Set Temp coefficent. You can use 0x04
-        __command(0, 0b00010100 ); # LCD bias mode 1:48. You can use 0x14
-        __command(0, 0b00100000 ); # LCD Basic Commands. You can use 0x20
-        __command(0, 0b00001100 ); # LCD in normal mode. You can use 0x0C
-        __command(1, 0b00011111);
-        __command(1, 0b00000101);
-        __command(1, 0b00000111);
-        __command(1, 0b00000000);
-        __command(1, 0b00011111);
-        __command(1, 0b00000100);
-        __command(1, 0b00011111);
-        __command(0, 0b00001101);
-        __command(0, 0b10000000);
-        __command(1, 0b00000000);
+        self.__command(0, 0b00100001 ); # LCD Extended Commands. You can use 0x21
+        self.__command(0, 0b10110000 ); # Set LCD Vop (Contrast). You can use 0xB0
+        self.__command(0, 0b00000100 ); # Set Temp coefficent. You can use 0x04
+        self.__command(0, 0b00010100 ); # LCD bias mode 1:48. You can use 0x14
+        self.__command(0, 0b00100000 ); # LCD Basic Commands. You can use 0x20
+        self.__command(0, 0b00001100 ); # LCD in normal mode. You can use 0x0C
+        self.__command(1, 0b00011111);
+        self.__command(1, 0b00000101);
+        self.__command(1, 0b00000111);
+        self.__command(1, 0b00000000);
+        self.__command(1, 0b00011111);
+        self.__command(1, 0b00000100);
+        self.__command(1, 0b00011111);
+        self.__command(0, 0b00001101);
+        self.__command(0, 0b10000000);
+        self.__command(1, 0b00000000);
 
         pass
 
