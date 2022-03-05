@@ -52,8 +52,8 @@ class Display:
 
     def set_cursor(self, x, y):
         # Achtung: Es wird nicht überprüft, ob sich die Position innerhalb der Grenzen befindet oder nicht.
-        self.__command(0x80 | x)
-        self.__command(0x40 | y)
+        self.__command(128 + x)
+        self.__command(64 + y)
 
     def clear(self):
         # Ich bin mir unsicher ob das überhaupt funktioniert
