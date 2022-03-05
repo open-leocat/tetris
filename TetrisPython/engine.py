@@ -4,14 +4,14 @@ import RPi.GPIO as GPIO
 
 class Display:
     def __init__(self):
-        GPIO.setup(3, GPIO.OUT)  # GPIO 2  / RST
-        GPIO.setup(5, GPIO.OUT)  # GPIO 3  / CE
-        GPIO.setup(7, GPIO.OUT)  # GPIO 4  / DC
-        GPIO.setup(11, GPIO.OUT) # GPIO 17 / DIN
-        GPIO.setup(13, GPIO.OUT) # GPIO 27 / CLK
+        GPIO.setup(2, GPIO.OUT)  # GPIO 2  / RST
+        GPIO.setup(3, GPIO.OUT)  # GPIO 3  / CE
+        GPIO.setup(4, GPIO.OUT)  # GPIO 4  / DC
+        GPIO.setup(17, GPIO.OUT) # GPIO 17 / DIN
+        GPIO.setup(27, GPIO.OUT) # GPIO 27 / CLK
 
-        GPIO.output(3, 0)
-        GPIO.output(3, 1)
+        GPIO.output(2, 0)
+        GPIO.output(2, 1)
 
     def __command(self, command, data):
         GPIO.output(4, command)
@@ -19,7 +19,7 @@ class Display:
 
         i = 7
         while (i >= 0):
-            GPIO.output(11, data & (1 << i))
+            GPIO.output(17, data & (1 << i))
             GPIO.output(27, 1);
             GPIO.output(27, 0);
 
