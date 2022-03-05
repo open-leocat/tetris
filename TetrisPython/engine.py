@@ -44,8 +44,8 @@ class Display:
     def clear(self):
         self.set_cursor(0, 0)
 
-        for value in range(4032):
-            data(0);
+        for i in range(4032):
+            self.__data(0);
 
         self.set_cursor(0, 0)
 
