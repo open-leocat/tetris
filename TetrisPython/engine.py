@@ -22,7 +22,7 @@ class Display:
         # self.__command(0b00001100) # LCD in normal mode. You can use 0x0C
 
         self.__command(0b00100001) # Signalisiert dem Display, dass erweiterte LCD-Befehle kommen.
-        self.__command(0xB1)
+        self.__command(0xBF)
         self.__command(0b00000100)
         self.__command(0b00010100)
         self.__command(0b00100000)
