@@ -7,19 +7,19 @@ manager = engine.GameManager(2)
 display = engine.Display()
 
 class MenuState(engine.GameState):
-    def initalize():
+    def initalize(self):
         pass
 
-    def update():
+    def update(self):
         pass
 menu_state = MenuState()
 
 class MainState(engine.GameState):
-    def initalize():
+    def initalize(self):
         self.x = 0.0
         print("Initalized!")
 
-    def update():
+    def update(self):
         if time > 5.0:
             printf("Finished!")
             manager.stop()
@@ -30,10 +30,10 @@ class MainState(engine.GameState):
 main_state = MainState()
 
 class DefeatState(engine.GameState):
-    def initalize():
+    def initalize(self):
         pass
 
-    def update():
+    def update(self):
         pass
 defeat_state = DefeatState()
 
