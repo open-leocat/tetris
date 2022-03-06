@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 
 class Display:
-    def __init__(self):
+    def initialize(self):
         GPIO.setup(2, GPIO.OUT)  # GPIO 2  / RST
         GPIO.setup(3, GPIO.OUT)  # GPIO 3  / CE
         GPIO.setup(4, GPIO.OUT)  # GPIO 4  / DC
