@@ -17,7 +17,7 @@ display.draw(0b00001110)
 display.draw(0b01001110)
 display.draw(0b00111100)
 
-# C
+# CO
 display.set_cursor(0, 4)
 display.draw(0b00000000)
 display.draw(0b01111000)
@@ -46,5 +46,15 @@ display.draw(0b00110111)
 display.draw(0b11100110)
 display.draw(0b01000110)
 display.draw(0b00110111)
+
+# E
+display.set_cursor(0, 1)
+display.draw(0b00000000)
+display.draw(0b11100000)
+display.draw(0b00000000)
+display.draw(0b11000000)
+display.draw(0b00000000)
+display.draw(0b00000000)
+display.draw(0b11100000)
 
 GPIO.cleanup()
