@@ -74,12 +74,15 @@ class Manager:
 
     def set_state(self, state):
         self.__state = state
-        self.__state.initialize()
+        if self.__running:
+            self.__state.initialize()
 
     def start(self):
         if self.__running:
             return
         self.__running = True
+
+        self.__state.initialize()
 
         while self.__running:
             self.__state.update()
