@@ -50,15 +50,17 @@ class Display:
         # Setze Y RAM des Displays
         self.__command(0x40 | y)
 
+    def set_cursor(self, x, y):
+        self.__command(0x80 | x)
+        self.__command(0x40 | y)
+
     def clear(self):
-        self.set_cursor_x(0)
-        self.set_cursor_y(0)
+        self.set_cursor(0, 0)
 
         for i in range(4032):
             self.__data(0)
 
-        self.set_cursor_x(0)
-        self.set_cursor_y(0)
+        self.set_cursor(0, 0)
 
     def draw(self, data):
         for b in data:
