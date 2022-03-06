@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+rm -rf tetris
+git clone https://github.com/open-leocat/tetris tetris
+python3 tetris/TetrisPython/main.py
