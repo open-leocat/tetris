@@ -23,7 +23,7 @@ class GameState(engine.State):
         display.draw([0x00, 0xE0, 0x00, 0xC0, 0x00, 0x00, 0xE0]) # E
 
         # Wand zeichnen
-        display.set_cursor(3, 5)
+        display.set_cursor(24, 5)
         display.draw([0b11111111])
 
     def update(self, delta_time):
