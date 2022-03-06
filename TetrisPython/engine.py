@@ -1,6 +1,33 @@
 import RPi.GPIO as GPIO
 
+class State:
+    def initialize(self):
+        pass
 
+    def update(self):
+        pass
+
+class Manager:
+    def __init__(self):
+        self.__running = False
+        self.__state = State()
+
+    def set_state(self, state):
+        self.__state = state
+        self.__state.intialize()
+
+    def start(self):
+        if self.__running:
+            return
+        self.__running = True
+
+        while self.__running:
+            self.__state.update()
+
+    def stop(self):
+        if not self.__running:
+            return
+        self.__running = False
 
 class Display:
     def __init__(self):
@@ -14,19 +41,12 @@ class Display:
         GPIO.output(2, 0)
         GPIO.output(2, 1)
 
-        # self.__command(0b00100001) # LCD Extended Commands. You can use 0x21
-        # self.__command(0b10110000) # Set LCD Vop (Contrast). You can use 0xB0
-        # self.__command(0b00000100) # Set Temp coefficent. You can use 0x04
-        # self.__command(0b00010100) # LCD bias mode 1:48. You can use 0x14
-        # self.__command(0b00100000) # LCD Basic Commands. You can use 0x20
-        # self.__command(0b00001100) # LCD in normal mode. You can use 0x0C
-
-        self.__command(0b00100001) # Signalisiert dem Display, dass erweiterte LCD-Befehle kommen.
-        self.__command(0xBF)
-        self.__command(0b00000100)
-        self.__command(0b00010100)
-        self.__command(0b00100000)
-        self.__command(0b00001100)
+        self.__command(0b00100001) # Signalisiert dem Display, dass erweiterte LCD-Befehle kommen
+        self.__command(0x10111111) # Setzt den Kontrast
+        self.__command(0b00000100) # Setzt den Temperaturkoeffizient?
+        self.__command(0b00010100) # Setzt den Bias Modus auf 1:48
+        self.__command(0b00100000) # Signalisiert dem Display, dass einfache LCD-Befehle kommen
+        self.__command(0b00001100) # Setzt den das Display auf den normalen Modus
 
     def __send(self, command, data):
         # Befehl oder Daten?
