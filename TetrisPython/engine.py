@@ -97,7 +97,7 @@ class Display:
 
     def set_cursor_y(self, y):
         # Setzt den Y Ram des Displays
-        self.__command(0x40 | y)
+        self.__command(0x40 | y)
 
     def clear(self):
         # Leert das Display
