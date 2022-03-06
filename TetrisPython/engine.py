@@ -63,7 +63,7 @@ class Display:
         self.set_cursor(0, 0)
 
     def draw(self, data):
-        for b in data
+        for b in data:
             self.__data(b)
 
     def __del__(self):
