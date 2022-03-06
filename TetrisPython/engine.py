@@ -1,6 +1,9 @@
 import time
 import RPi.GPIO as GPIO
 
+
+
+# https://www.sparkfun.com/datasheets/LCD/Monochrome/Nokia5110.pdf
 class Display:
     def initialize(self):
         GPIO.setup(2, GPIO.OUT)  # GPIO 2  / RST
