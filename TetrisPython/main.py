@@ -10,6 +10,7 @@ display = engine.Display()
 # Der Zustand für das eigentliche Spiel
 class MainState(engine.GameState):
     def initalize(self):
+        pass
         # display.clear()
 
         # "Score"-Text
