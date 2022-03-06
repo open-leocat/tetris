@@ -7,7 +7,7 @@ manager = engine.Manager()
 display = engine.Display()
 
 class GameState(engine.State):
-    def intialize(self):
+    def initialize(self):
         display.clear()
 
         # S
