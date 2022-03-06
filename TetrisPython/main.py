@@ -20,8 +20,8 @@ class MainState(engine.GameState):
         print("Initalized!")
 
     def update(self):
-        if time > 5.0:
-            printf("Finished!")
+        if self.x > 5.0:
+            print("Finished!")
             manager.stop()
 
         print("Updated!")
