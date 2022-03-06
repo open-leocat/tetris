@@ -1,34 +1,5 @@
 import RPi.GPIO as GPIO
 
-# class State:
-#     def initialize(self):
-#         pass
-#
-#     def update(self):
-#         pass
-#
-# class Manager:
-#     def __init__(self):
-#         self.__running = False
-#         self.__state = State()
-#
-#     def set_state(self, state):
-#         self.__state = state
-#         self.__state.intialize()
-#
-#     def start(self):
-#         if self.__running:
-#             return
-#         self.__running = True
-#
-#         while self.__running:
-#             self.__state.update()
-#
-#     def stop(self):
-#         if not self.__running:
-#             return
-#         self.__running = False
-
 class Display:
     def __init__(self):
         GPIO.setup(2, GPIO.OUT)  # GPIO 2  / RST
@@ -88,3 +59,32 @@ class Display:
 
     def __del__(self):
         pass
+
+class State:
+    def initialize(self):
+        pass
+
+    def update(self):
+        pass
+
+# class Manager:
+#     def __init__(self):
+#         self.__running = False
+#         self.__state = State()
+#
+#     def set_state(self, state):
+#         self.__state = state
+#         self.__state.intialize()
+#
+#     def start(self):
+#         if self.__running:
+#             return
+#         self.__running = True
+#
+#         while self.__running:
+#             self.__state.update()
+#
+#     def stop(self):
+#         if not self.__running:
+#             return
+#         self.__running = False
