@@ -35,6 +35,12 @@ class GameState(engine.State):
                       ]) # Linke Seite
         display.set_cursor(75, 4)
         display.draw([0xFF, 0x00, 0xFF])
+        display.set_cursor(75, 3)
+        display.draw([0xFF, 0x00, 0xFF])
+        display.set_cursor(75, 2)
+        display.draw([0xFF, 0x00, 0xFF])
+        display.set_cursor(75, 2)
+        display.draw([0xF9, 0x02, 0xFC])
 
     def update(self, delta_time):
         pass
