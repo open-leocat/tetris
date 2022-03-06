@@ -13,35 +13,14 @@ display.draw([0x00, 0x3C, 0x60, 0x3C, 0x0E, 0x4E, 0x3C])
 # CO
 display.set_cursor(0, 4)
 display.draw([0x00, 0x78, 0xCD, 0xC1, 0xC1, 0xCD, 0x78])
-
-# # OR
-# display.set_cursor(0, 3)
-# display.draw(0b00000000)
-# display.draw(0b11110011)
-# display.draw(0b10011011)
-# display.draw(0b10011011)
-# display.draw(0b10011011)
-# display.draw(0b10011011)
-# display.draw(0b11110011)
-#
-# # RE
-# display.set_cursor(0, 2)
-# display.draw(0b00000000)
-# display.draw(0b11100111)
-# display.draw(0b00110110)
-# display.draw(0b00110111)
-# display.draw(0b11100110)
-# display.draw(0b01000110)
-# display.draw(0b00110111)
-#
-# # E
-# display.set_cursor(0, 1)
-# display.draw(0b00000000)
-# display.draw(0b11100000)
-# display.draw(0b00000000)
-# display.draw(0b11000000)
-# display.draw(0b00000000)
-# display.draw(0b00000000)
-# display.draw(0b11100000)
+# OR
+display.set_cursor(0, 3)
+display.draw([0x00, 0xF3, 0x9B, 0x9B, 0x9B, 0x9B, 0xF3])
+# RE
+display.set_cursor(0, 2)
+display.draw([0x00, 0xE7, 0x36, 0x37, 0xE6, 0x46, 0x37])
+# E
+display.set_cursor(0, 1)
+display.draw([0x00, 0xE0, 0x00, 0xC0, 0x00, 0x00, 0xE0])
 
 GPIO.cleanup()
