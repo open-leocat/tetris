@@ -43,7 +43,7 @@ class GameManager:
 
             if self.delta >= 1: # Wenn Tick vorbei -> Update und setze die Deltazeit zurück
                 self.__state.update()
-                delta -= 1
+                self.delta -= 1
 
     def stop(self):
         if not self.__running:
