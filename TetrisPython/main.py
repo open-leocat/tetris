@@ -8,6 +8,8 @@ display = engine.Display()
 
 class GameState(engine.State):
     def initialize(self):
+        self.x = 0.0
+        
         display.clear()
 
         # S
@@ -29,9 +31,7 @@ class GameState(engine.State):
     def update(self, delta_time):
         print("Tick")
 
-        self.x = 0.0
-
-        if self.x >= 5.0:
+        if self.x > 5.0:
             print("Stop")
             manager.stop()
 
