@@ -43,9 +43,13 @@ class GameState(engine.State):
         display.set_cursor_x(13)
         display.draw([0xFF, 0x00, 0xFF]) # Obere Seite 4
         display.set_cursor(75, 1)
-        display.draw([0xF9, 0x02, 0xFC]) # Untere Seite 5
+        display.draw([0xFC, 0x01, 0xFE]) # Untere Seite 5
         display.set_cursor_x(13)
         display.draw([0xFF, 0x00, 0xFF]) # Obere Seite 5
+        display.set_cursor(75, 0)
+        display.draw([0x80, 0x00, 0x00]) # Untere Seite 6
+        display.set_cursor_x(13)
+        display.draw([0xFF, 0x00, 0xFF]) # Obere Seite 6
 
     def update(self, delta_time):
         pass
