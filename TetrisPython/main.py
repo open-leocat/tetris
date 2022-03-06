@@ -10,17 +10,10 @@ display.clear()
 # S
 display.set_cursor(0, 5)
 display.draw([0x00, 0x3C, 0x60, 0x3C, 0x0E, 0x4E, 0x3C])
+# CO
+display.set_cursor(0, 4)
+display.draw([0x00, 0x78, 0xCD, 0xC1, 0xC1, 0xCD, 0x78])
 
-# # CO
-# display.set_cursor(0, 4)
-# display.draw(0b00000000)
-# display.draw(0b01111000)
-# display.draw(0b11001101)
-# display.draw(0b11000001)
-# display.draw(0b11000001)
-# display.draw(0b11001101)
-# display.draw(0b01111000)
-#
 # # OR
 # display.set_cursor(0, 3)
 # display.draw(0b00000000)
