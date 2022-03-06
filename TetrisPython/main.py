@@ -3,7 +3,7 @@ import engine
 
 GPIO.setmode(GPIO.BCM)
 
-manager = engine.Manager()
+manager = engine.Manager(1)
 display = engine.Display()
 
 class GameState(engine.State):
@@ -26,8 +26,17 @@ class GameState(engine.State):
         display.set_cursor(0, 1)
         display.draw([0x00, 0xE0, 0x00, 0xC0, 0x00, 0x00, 0xE0])
 
-    def update(self):
-        manager.stop()
+    def update(self, delta_time):
+        print("Tick")
+
+        self.x = 0.0
+
+        if self.x >= 5.0:
+            print("Stop")
+            manager.stop()
+
+        self.x += delta_time
+
 game_state = GameState()
 
 display.initialize()

@@ -13,7 +13,7 @@ class Display:
         GPIO.output(2, 1)
 
         self.__command(0b00100001) # Signalisiert dem Display, dass erweiterte LCD-Befehle kommen
-        self.__command(0xBF) # Setzt den Kontrast
+        self.__command(0b10111111) # Setzt den Kontrast
         self.__command(0b00000100) # Setzt den Temperaturkoeffizient?
         self.__command(0b00010100) # Setzt den Bias Modus auf 1:48
         self.__command(0b00100000) # Signalisiert dem Display, dass einfache LCD-Befehle kommen
@@ -42,6 +42,7 @@ class Display:
         self.__send(1, data)
 
     def set_cursor(self, x, y):
+        # Setze X und Y RAM des Displays
         self.__command(0x80 | x)
         self.__command(0x40 | y)
 
@@ -49,7 +50,7 @@ class Display:
         self.set_cursor(0, 0)
 
         for i in range(4032):
-            self.__data(0);
+            self.__data(0)
 
         self.set_cursor(0, 0)
 
@@ -64,13 +65,17 @@ class State:
     def initialize(self):
         pass
 
-    def update(self):
+    def update(self, delta_time):
         pass
 
 class Manager:
-    def __init__(self):
+    def __init__(self, tps):
+        self.set_tps(tps)
         self.__running = False
         self.__state = State()
+
+    def set_tps(self, tps):
+        self.__tick_time = 1e9 / tps # Berechne Nanosekunden pro Tick
 
     def set_state(self, state):
         self.__state = state
@@ -84,8 +89,18 @@ class Manager:
 
         self.__state.initialize()
 
+        delta = 0.0
+        last_time = time.time_ns()
+        now_time = 0
+
         while self.__running:
-            self.__state.update()
+            now_time = time.time_ns()
+            delta += (now_time - last_time) / self.__tick_time # Berechne Deltazeit
+            last_time = now_time
+
+            if delta >= 1: # Wenn Tick vorbei -> Update und setze die Deltazeit zurück
+                self.__state.update(delta)
+                delta -= 1
 
     def stop(self):
         if not self.__running:
