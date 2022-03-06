@@ -63,8 +63,8 @@ class Display:
         self.set_cursor(0, 0)
 
     def draw(self, data):
-        # Theoretisch hätte man auch ein Bytearray verwenden können um Funktionsaufrufe zu sparen
-        self.__data(data)
+        for b in data
+            self.__data(b)
 
     def __del__(self):
         pass
