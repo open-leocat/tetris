@@ -10,6 +10,7 @@ class GameState(engine.State):
     def initialize(self):
         display.clear()
 
+        self.set_cursor_x(0)
         # S
         display.set_cursor_y(5)
         display.draw([0x00, 0x3C, 0x60, 0x3C, 0x0E, 0x4E, 0x3C])
