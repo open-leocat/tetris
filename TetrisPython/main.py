@@ -32,6 +32,8 @@ class MainState(engine.GameState):
         display.set_cursor_y(1) # E
         display.draw([0x00, 0xE0, 0x00, 0xC0, 0x00, 0x00, 0xE0])
 
+        #
+
     def update(self):
         pass
 main_state = MainState()

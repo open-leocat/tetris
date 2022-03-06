@@ -101,12 +101,14 @@ class Display:
 
     def clear(self):
         # Leert das Display
-        self.set_cursor(0, 0)
+        self.set_cursor_x(0)
+        self.set_cursor_y(0)
 
         for i in range(4032):
             self.__data(0);
 
-        self.set_cursor(0, 0)
+        self.set_cursor_x(0)
+        self.set_cursor_y(0)
 
     def draw(self, data):
         for b in data:
