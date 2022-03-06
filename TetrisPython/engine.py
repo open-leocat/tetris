@@ -20,7 +20,7 @@ class GameManager:
         self.__state = GameState()
         self.__running = False
 
-    def set_state(state):
+    def set_state(self, state):
         self.__state = state
         self.__state.initalize()
 
