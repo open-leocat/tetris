@@ -7,7 +7,7 @@ display = engine.Display()
 
 display.clear()
 display.set_cursor(0, 5)
-display.draw(0b01111100)
+display.draw(0b00000000)
 display.draw(0b01111100)
 
 GPIO.cleanup()
