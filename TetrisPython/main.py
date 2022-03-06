@@ -32,7 +32,7 @@ game_state = GameState()
 
 display.initialize()
 
-manager.set_state(display)
+manager.set_state(game_state)
 manager.start()
 
 GPIO.cleanup()

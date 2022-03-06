@@ -74,7 +74,7 @@ class Manager:
 
     def set_state(self, state):
         self.__state = state
-        self.__state.intialize()
+        self.__state.initialize()
 
     def start(self):
         if self.__running:
