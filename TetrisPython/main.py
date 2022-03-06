@@ -6,22 +6,14 @@ GPIO.setmode(GPIO.BCM)
 manager = engine.GameManager(2)
 display = engine.Display()
 
-# Der Zustand für das Menü
-class MenuState(engine.GameState):
-    def initalize(self):
-        pass
-
-    def update(self):
-        pass
-menu_state = MenuState()
 
 # Der Zustand für das eigentliche Spiel
 class MainState(engine.GameState):
     def initalize(self):
-        display.clear()
+        # display.clear()
 
         # "Score"-Text
-        display.draw([0b11111111])
+        # display.draw([0b11111111])
         # display.set_cursor_y(5) # S
         # display.draw([0x00, 0x3C, 0x60, 0x3C, 0x0E, 0x4E, 0x3C])
         # display.set_cursor_y(4) # CO
@@ -38,23 +30,17 @@ class MainState(engine.GameState):
         self.x = 0.0
 
 
-        if self.x > 5.0:
+        if self.x >= 5.0:
             manager.stop()
 
         self.x += manager.delta
 main_state = MainState()
 
-# Der Zustand für den GameOver Bildschirm
-class DefeatState(engine.GameState):
-    def initalize(self):
-        pass
-
-    def update(self):
-        pass
-defeat_state = DefeatState()
-
 manager.set_state(main_state)
-manager.start()
-manager.stop()
+# manager.start()
+# manager.stop()
+
+display.clear()
+display.draw([0b11111111])
 
 GPIO.cleanup()
