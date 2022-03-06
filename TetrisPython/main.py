@@ -5,13 +5,13 @@ GPIO.setmode(GPIO.BCM)
 
 display = engine.Display()
 
-class GameState(engine.State):
-    def intialize(self):
-        pass
-
-    def update(self):
-        pass
-game_state = GameState()
+# class GameState(engine.State):
+#     def intialize(self):
+#         pass
+#
+#     def update(self):
+#         pass
+# game_state = GameState()
 
 display.clear()
 

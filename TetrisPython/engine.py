@@ -46,7 +46,7 @@ class Display:
         self.__command(0b00000100) # Setzt den Temperaturkoeffizient?
         self.__command(0b00010100) # Setzt den Bias Modus auf 1:48
         self.__command(0b00100000) # Signalisiert dem Display, dass einfache LCD-Befehle kommen
-        self.__command(0b00001100) # Setzt den das Display auf den normalen Modus
+        self.__command(0b00001100) # Setzt das Display auf den normalen Modus
 
     def __send(self, command, data):
         # Befehl oder Daten?
