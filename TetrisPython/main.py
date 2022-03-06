@@ -31,11 +31,17 @@ class MainState(engine.GameState):
         display.draw([0x00, 0xE7, 0x36, 0x37, 0xE6, 0x46, 0x37])
         display.set_cursor_y(1) # E
         display.draw([0x00, 0xE0, 0x00, 0xC0, 0x00, 0x00, 0xE0])
-
+        print("hello")
         #
 
     def update(self):
-        pass
+        self.x = 0.0
+
+
+        if self.x > 5.0:
+            manager.stop()
+
+        self.x += manager.delta
 main_state = MainState()
 
 # Der Zustand für den GameOver Bildschirm
