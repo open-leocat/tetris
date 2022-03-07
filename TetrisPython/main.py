@@ -37,11 +37,16 @@ class GameState(engine.State):
         display.draw([0xFF, 0x00, 0xFF]) # Obere Seite 2
 
         display.set_cursor(75, 2)
+        display.draw([0xFF, 0x00, 0xFF]) # Untere Seite 3
+        display.set_cursor_x(13)
+        display.draw([0xFF, 0x00, 0xFF]) # Obere Seite 3
+
+        display.set_cursor(75, 1)
         display.draw([0xFC, 0x01, 0xFE]) # Untere Seite 4
         display.set_cursor_x(13)
         display.draw([0xFF, 0x00, 0xFF]) # Obere Seite 4
 
-        display.set_cursor(75, 1)
+        display.set_cursor(75, 0)
         display.draw([0x80, 0x00, 0x00]) # Untere Seite 5
         display.set_cursor_x(13)
         display.draw([0xFF, 0x00, 0xFF]) # Obere Seite 5
