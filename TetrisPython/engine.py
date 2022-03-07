@@ -28,7 +28,7 @@ class Display:
         GPIO.output(4, command)
         GPIO.output(3, 0)
 
-        # Sendet ein Byte bitweise und sendet jedes Mal einen Impuls an den Clock-Pin. (Theoretisch hätte man auch die SPI-Pins dafür verwenden können, aber: "Never change a running system")
+        # Sendet ein Byte bitweise und sendet jedes Mal einen Impuls an den Clock-Pin. (Theoretisch hätte man auch die SPI-Pins dafür verwenden können)
         i = 7
         while (i >= 0):
             GPIO.output(17, data & (1 << i))
