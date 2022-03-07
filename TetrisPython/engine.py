@@ -16,7 +16,7 @@ class Display:
         GPIO.output(2, 0)
         GPIO.output(2, 1)
 
-        self.__command(0b00100011) # Signalisiert dem Display, dass erweiterte LCD-Befehle kommen
+        self.__command(0b00100001) # Signalisiert dem Display, dass erweiterte LCD-Befehle kommen, vertikaler Modus aus
         self.__command(0b10111111) # Setzt den Kontrast
         self.__command(0b00000100) # Setzt den Temperaturkoeffizient?
         self.__command(0b00010100) # Setzt den Bias Modus auf 1:48
