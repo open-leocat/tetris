@@ -110,7 +110,7 @@ class GameState(engine.State):
                 self.piece_x -= 1
 
                 # Den Tetromino zeichnen
-                rotated = self.tetromino[self.piece][self.__tetromino_rotate(self.piece_x, self.piece_y, self.piece_rotation)]
+                rotated = self.tetrominos[self.piece][self.__tetromino_rotate(self.piece_x, self.piece_y, self.piece_rotation)]
 
                 px = self.piece_x * 3 # Pixel position
                 py = self.piece_y * 3 # Pixel position
