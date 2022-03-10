@@ -118,7 +118,7 @@ class GameState(engine.State):
 
                 display.set_cursor(60, part_x)
 
-                display.draw(0xFF)
+                display.draw([0xFF])
 
                 # for y in range(4):
                 #     for x in range(4):
