@@ -111,7 +111,7 @@ class GameState(engine.State):
 
                 # Den Tetromino zeichnen
 
-                px = (3*self.piece_x + 5) / 6
+                px = int((3*self.piece_x + 5) / 6)
                 py = self.piece_y * 3
 
                 display.set_cursor(60, px)
