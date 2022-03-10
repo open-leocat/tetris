@@ -166,7 +166,7 @@ class GameState(engine.State):
 
 game_state = GameState()
 
-
+GPIO.setmode(GPIO.BCM)
 
 input.initialize()
 display.initialize()
