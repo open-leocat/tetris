@@ -111,40 +111,38 @@ class GameState(engine.State):
 
                 # Den Tetromino zeichnen
 
-                px = self.piece_x * 3 # Pixel position
-                py = self.piece_y * 3 # Pixel position
+                px = (3*self.piece_x + 5) / 6
+                py = self.piece_y * 3
 
-                part_x = ((px + 7) & (-8))
-
-                display.set_cursor(60, part_x)
+                display.set_cursor(60, px)
 
                 display.draw([0xFF])
 
     def __tetromino_rotate(self, x, y, rotation):
-        index = 0
         temp = rotation % 4
 
         if temp == 0:
-            index = y * 4 + x
+            return y * 4 + x
         elif temp == 1:
-            index = 12 + y - (x * 4)
+            return 12 + y - (x * 4)
         elif temp == 2:
-            index = 15 - (y * 4) - x
+            return 15 - (y * 4) - x
         elif temp == 3:
-            index = 3 - y + (x * 4)
+            return 3 - y + (x * 4)
 
-        return index
+        return 0
 
     def __tetromino_fit(self, id, x, y, rotation):
         return True
 
 game_state = GameState()
 
+
+
 GPIO.setmode(GPIO.BCM)
 
 input.initialize()
 display.initialize()
-
 
 manager.set_state(game_state)
 manager.start()
