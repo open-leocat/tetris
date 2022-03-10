@@ -124,8 +124,6 @@ class GameState(engine.State):
                 # for y in range(4):
                 #     for x in range(4):
 
-            # px = 3 * self.piece_x # Pixelposition berechnen
-
 
 
             pass
@@ -149,25 +147,6 @@ class GameState(engine.State):
         return index
 
     def __tetromino_fit(self, id, x, y, rotation):
-        for px in range(4):
-            for py in range(4):
-                index = self.__tetromino_rotate(x, y, rotation) # Tetromino rotieren
-
-                field_index = (y + py) * 10 + (x + px) # Index auf dem Spielefeld berechnen
-
-                if x + px < 0 and x + px >= 10: # Passt nicht horizontal?
-                    return False
-
-                if y + py < 0 and x + px >= 17: # Passt nicht vertikal?
-                    return False
-
-                print("-")
-                print(index)
-                print(field_index)
-
-                if self.field[field_index] is not 0 or self.tetrominos[id][index] == 0: # Kein Platz!
-                    return False
-
         return True
 
 game_state = GameState()
