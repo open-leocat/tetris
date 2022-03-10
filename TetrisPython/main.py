@@ -160,7 +160,7 @@ class GameState(engine.State):
                 if y + py < 0 and x + px >= 17: # Passt nicht vertikal?
                     return False
 
-                if self.field[field_index] is not 0 or self.tetromino[id][index] == 0: # Kein Platz!
+                if self.field[field_index] is not 0 or self.tetrominos[id][index] == 0: # Kein Platz!
                     return False
 
         return True
