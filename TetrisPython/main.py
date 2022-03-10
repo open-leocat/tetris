@@ -146,4 +146,8 @@ input.initialize()
 display.initialize()
 
 manager.set_state(game_state)
-manager.start()
+
+try:
+    manager.start()
+except KeyboardInterrupt:
+    GPIO.cleanup()
