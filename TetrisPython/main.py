@@ -1,5 +1,5 @@
 import engine
-import RPi.GPIO
+import RPi.GPIO as GPIO
 
 
 
