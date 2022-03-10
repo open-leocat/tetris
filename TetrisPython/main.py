@@ -106,17 +106,18 @@ class GameState(engine.State):
     def update(self, delta_time):
         if input.is_pressed(0):
             # Links
-            if self.__tetromino_fit(self.piece, self.piece_rotation, self.piece_x - 1, self.piece_y):
-                self.piece_x -= 1
-
-                # Den Tetromino zeichnen
-
-                px = int((3*self.piece_x + 5) / 6)
-                py = self.piece_y * 3
-
-                display.set_cursor(60, px)
-
-                display.draw([0xFF])
+            print("hello world")
+            # if self.__tetromino_fit(self.piece, self.piece_rotation, self.piece_x - 1, self.piece_y):
+            #     self.piece_x -= 1
+            #
+            #     # Den Tetromino zeichnen
+            #
+            #     px = int((3*self.piece_x + 5) / 6)
+            #     py = self.piece_y * 3
+            #
+            #     display.set_cursor(60, px)
+            #
+            #     display.draw([0xFF])
 
     def __tetromino_rotate(self, x, y, rotation):
         temp = rotation % 4
