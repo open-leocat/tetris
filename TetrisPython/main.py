@@ -134,18 +134,19 @@ class GameState(engine.State):
             pass
 
     def __tetromino_rotate(self, x, y, rotation):
+        index = 0
         temp = rotation % 4
 
-        if temp == 0: # 0°
-            return y * 4 + x
-        elif temp == 1: # 90°
-            return 12 + y - (x * 4)
-        elif temp == 2: # 180°
-            return 15 - (y * 4) - x
-        elif temp == 3: # 270°
-            return 3 - y + (x * 4)
+        if temp == 0:
+            index = y * 4 + x
+        elif temp == 1:
+            index = 12 + y - (x * 4)
+        elif temp == 2:
+            index = 15 - (y * 4) - x
+        elif temp == 3:
+            index = 3 - y + (x * 4)
 
-        return 0
+        return index
 
     def __tetromino_fit(self, id, x, y, rotation):
         for px in range(4):
