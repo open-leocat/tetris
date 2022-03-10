@@ -72,6 +72,25 @@ class Display:
     def __del__(self):
         pass
 
+class Input:
+    def initialize(self):
+        GPIO.setup(5, GPIO.IN) # Links
+        GPIO.setup(6, GPIO.IN) # Rechts
+
+    # 0 = Links
+    # 1 = Rechts
+    # 2 = Unten
+    # 3 = Oben
+    def is_pressed(self, button):
+        if button == 0:
+            return GPIO.input(5)
+        elif button == 1:
+            return GPIO.input(6)
+        elif button == 2:
+            pass
+        elif button == 3:
+            pass
+
 class State:
     def initialize(self):
         pass
@@ -85,7 +104,7 @@ class Manager:
         self.__running = False
         self.__state = State()
 
-    def set_tps(self, tps):
+    def set_tps(self, tps): # TPS = Tick per second
         self.__tick_time = 1e9 / tps # Berechne Nanosekunden pro Tick
 
     def set_state(self, state):
