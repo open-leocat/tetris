@@ -104,7 +104,7 @@ class GameState(engine.State):
 
 
     def update(self, delta_time):
-        if input.is_pressed(0):
+        if input.is_pressed(0) == True:
             # Links
             print("hello world")
             # if self.__tetromino_fit(self.piece, self.piece_rotation, self.piece_x - 1, self.piece_y):

@@ -83,9 +83,9 @@ class Input:
     # 3 = Oben
     def is_pressed(self, button):
         if button == 0:
-            return GPIO.input(5) == GPIO.HIGH
+            return GPIO.input(5) == GPIO.LOW
         elif button == 1:
-            return GPIO.input(6) == GPIO.HIGH
+            return GPIO.input(6) == GPIO.LOW
         elif button == 2:
             pass
         elif button == 3:
