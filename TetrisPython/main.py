@@ -2,9 +2,9 @@ import engine
 
 
 
-manager = Manager(8)
+manager = engine.Manager(8)
 
-input = Input()
+input = engine.Input()
 display = engine.Display()
 
 
