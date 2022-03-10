@@ -105,22 +105,37 @@ class GameState(engine.State):
 
     def update(self, delta_time):
         if input.is_pressed(0):
-            print("Hello world")
             # Links
             if self.__tetromino_fit(self.piece, self.piece_rotation, self.piece_x - 1, self.piece_y):
                 self.piece_x -= 1
 
-                ## Den Tetromino zeichnen
-                # rotated = self.tetrominos[self.piece][self.__tetromino_rotate(self.piece_x, self.piece_y, self.piece_rotation)]
-                #
-                # px = self.piece_x * 3 # Pixel position
-                # py = self.piece_y * 3 # Pixel position
-                #
-                # part_x = ((px + 7) & (-8))
-                #
-                # display.set_cursor(60, part_x)
-                #
-                # display.draw([0xFF])
+                # Den Tetromino zeichnen
+                rotated = self.tetrominos[self.piece][self.__tetromino_rotate(self.piece_x, self.piece_y, self.piece_rotation)]
+
+                px = self.piece_x * 3 # Pixel position
+                py = self.piece_y * 3 # Pixel position
+
+                part_x = ((px + 7) & (-8))
+
+                display.set_cursor(60, part_x)
+
+                display.draw([0xFF])
+        elif input.is_pressed(1):
+            # Rechts
+            if self.__tetromino_fit(self.piece, self.piece_rotation, self.piece_x + 1, self.piece_y):
+                self.piece_x += 1
+
+                # Den Tetromino zeichnen
+                rotated = self.tetrominos[self.piece][self.__tetromino_rotate(self.piece_x, self.piece_y, self.piece_rotation)]
+
+                px = self.piece_x * 3 # Pixel position
+                py = self.piece_y * 3 # Pixel position
+
+                part_x = ((px + 7) & (-8))
+
+                display.set_cursor(60, part_x)
+
+                display.draw([0xFF])
 
 
 
